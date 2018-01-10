@@ -12,6 +12,13 @@
 		D5A735362006AFBE00502849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5A735342006AFBE00502849 /* Main.storyboard */; };
 		D5A735382006AFBE00502849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5A735372006AFBE00502849 /* Assets.xcassets */; };
 		D5A7353B2006AFBE00502849 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5A735392006AFBE00502849 /* LaunchScreen.storyboard */; };
+		D5A7354A2006AFDB00502849 /* dmCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A735432006AFDB00502849 /* dmCalendar.swift */; };
+		D5A7354B2006AFDB00502849 /* dmCalendarCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A735442006AFDB00502849 /* dmCalendarCollectionLayout.swift */; };
+		D5A7354C2006AFDB00502849 /* dmCalendarCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A735452006AFDB00502849 /* dmCalendarCollectionDataSource.swift */; };
+		D5A7354D2006AFDB00502849 /* dmCalendarProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A735462006AFDB00502849 /* dmCalendarProperties.swift */; };
+		D5A7354E2006AFDB00502849 /* dmCalendarCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A735472006AFDB00502849 /* dmCalendarCollectionDelegate.swift */; };
+		D5A7354F2006AFDB00502849 /* dmCalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A735482006AFDB00502849 /* dmCalendarDate.swift */; };
+		D5A735502006AFDB00502849 /* dmCalendarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A735492006AFDB00502849 /* dmCalendarCollectionView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		D5A735372006AFBE00502849 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5A7353A2006AFBE00502849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5A7353C2006AFBE00502849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5A735432006AFDB00502849 /* dmCalendar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dmCalendar.swift; sourceTree = "<group>"; };
+		D5A735442006AFDB00502849 /* dmCalendarCollectionLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dmCalendarCollectionLayout.swift; sourceTree = "<group>"; };
+		D5A735452006AFDB00502849 /* dmCalendarCollectionDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dmCalendarCollectionDataSource.swift; sourceTree = "<group>"; };
+		D5A735462006AFDB00502849 /* dmCalendarProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dmCalendarProperties.swift; sourceTree = "<group>"; };
+		D5A735472006AFDB00502849 /* dmCalendarCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dmCalendarCollectionDelegate.swift; sourceTree = "<group>"; };
+		D5A735482006AFDB00502849 /* dmCalendarDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dmCalendarDate.swift; sourceTree = "<group>"; };
+		D5A735492006AFDB00502849 /* dmCalendarCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dmCalendarCollectionView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +68,7 @@
 		D5A7352F2006AFBE00502849 /* dmCalendarExample */ = {
 			isa = PBXGroup;
 			children = (
+				D5A735422006AFDB00502849 /* dmCalendar */,
 				D5A735302006AFBE00502849 /* AppDelegate.swift */,
 				D5A735322006AFBE00502849 /* ViewController.swift */,
 				D5A735342006AFBE00502849 /* Main.storyboard */,
@@ -62,6 +77,21 @@
 				D5A7353C2006AFBE00502849 /* Info.plist */,
 			);
 			path = dmCalendarExample;
+			sourceTree = "<group>";
+		};
+		D5A735422006AFDB00502849 /* dmCalendar */ = {
+			isa = PBXGroup;
+			children = (
+				D5A735432006AFDB00502849 /* dmCalendar.swift */,
+				D5A735442006AFDB00502849 /* dmCalendarCollectionLayout.swift */,
+				D5A735452006AFDB00502849 /* dmCalendarCollectionDataSource.swift */,
+				D5A735462006AFDB00502849 /* dmCalendarProperties.swift */,
+				D5A735472006AFDB00502849 /* dmCalendarCollectionDelegate.swift */,
+				D5A735482006AFDB00502849 /* dmCalendarDate.swift */,
+				D5A735492006AFDB00502849 /* dmCalendarCollectionView.swift */,
+			);
+			name = dmCalendar;
+			path = ../../../dmCalendar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,8 +166,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5A7354F2006AFDB00502849 /* dmCalendarDate.swift in Sources */,
+				D5A7354C2006AFDB00502849 /* dmCalendarCollectionDataSource.swift in Sources */,
+				D5A7354B2006AFDB00502849 /* dmCalendarCollectionLayout.swift in Sources */,
 				D5A735332006AFBE00502849 /* ViewController.swift in Sources */,
+				D5A7354A2006AFDB00502849 /* dmCalendar.swift in Sources */,
+				D5A7354E2006AFDB00502849 /* dmCalendarCollectionDelegate.swift in Sources */,
+				D5A735502006AFDB00502849 /* dmCalendarCollectionView.swift in Sources */,
 				D5A735312006AFBE00502849 /* AppDelegate.swift in Sources */,
+				D5A7354D2006AFDB00502849 /* dmCalendarProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
