@@ -52,8 +52,8 @@ public final class dmCalendar: UIView, dmCalendarCollectionViewDelegate, UIColle
 	fileprivate var selectedIndexPath: IndexPath = IndexPath(item: 0, section: 0)
 	fileprivate var selectedDate: Date = Date()
 	
-	weak var collectionDelegate: dmCalendarCollectionDelegate?
-	weak var collectionDataSource: dmCalendarCollectionDataSource?
+	weak var delegate: dmCalendarCollectionDelegate?
+	weak var dataSource: dmCalendarCollectionDataSource?
 	weak var calendarPositionDelegate: dmCalendarPositionDelegate?
 	
 	var desiredDates: [Date] = []
@@ -476,83 +476,83 @@ extension dmCalendar {
 
 extension dmCalendar: UICollectionViewDataSource {
 	public func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-		guard let value = collectionDelegate?.calendar?(self, shouldSelectItemAt: indexPath) else { return true }
+		guard let value = delegate?.calendar?(self, shouldSelectItemAt: indexPath) else { return true }
 		return value
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, shouldDeselectItemAt indexPath: IndexPath) -> Bool {
-		guard let value = collectionDelegate?.calendar?(self, shouldDeselectItemAt: indexPath) else { return true }
+		guard let value = delegate?.calendar?(self, shouldDeselectItemAt: indexPath) else { return true }
 		return value
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-		guard let value = collectionDelegate?.calendar?(self, shouldHighlightItemAt: indexPath) else { return true }
+		guard let value = delegate?.calendar?(self, shouldHighlightItemAt: indexPath) else { return true }
 		return value
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 		selectedIndexPath = indexPath
-		collectionDelegate?.calendar?(self, didSelectItemAt: indexPath)
+		delegate?.calendar?(self, didSelectItemAt: indexPath)
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-		collectionDelegate?.calendar?(self, didDeselectItemAt: indexPath)
+		delegate?.calendar?(self, didDeselectItemAt: indexPath)
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, didHighlightItemAt indexPath: IndexPath) {
-		collectionDelegate?.calendar?(self, didHighlightItemAt: indexPath)
+		delegate?.calendar?(self, didHighlightItemAt: indexPath)
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, didUnhighlightItemAt indexPath: IndexPath) {
-		collectionDelegate?.calendar?(self, didUnhighlightItemAt: indexPath)
+		delegate?.calendar?(self, didUnhighlightItemAt: indexPath)
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-		collectionDelegate?.calendar?(self, willDisplay: cell, forItemAt: indexPath)
+		delegate?.calendar?(self, willDisplay: cell, forItemAt: indexPath)
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-		collectionDelegate?.calendar?(self, didEndDisplaying: cell, forItemAt: indexPath)
+		delegate?.calendar?(self, didEndDisplaying: cell, forItemAt: indexPath)
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, willDisplaySupplementaryView view: UICollectionReusableView, forElementKind elementKind: String, at indexPath: IndexPath) {
-		collectionDelegate?.calendar?(self, willDisplaySupplementaryView: view, forElementKind: elementKind, at: indexPath)
+		delegate?.calendar?(self, willDisplaySupplementaryView: view, forElementKind: elementKind, at: indexPath)
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, didEndDisplayingSupplementaryView view: UICollectionReusableView, forElementOfKind elementKind: String, at indexPath: IndexPath) {
-		collectionDelegate?.calendar?(self, didEndDisplayingSupplementaryView: view, forElementOfKind: elementKind, at: indexPath)
+		delegate?.calendar?(self, didEndDisplayingSupplementaryView: view, forElementOfKind: elementKind, at: indexPath)
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, shouldUpdateFocusIn context: UICollectionViewFocusUpdateContext) -> Bool {
-		guard let value = collectionDelegate?.calendar?(self, shouldUpdateFocusIn: context) else { return false }
+		guard let value = delegate?.calendar?(self, shouldUpdateFocusIn: context) else { return false }
 		return value
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-		guard let value = collectionDelegate?.calendar?(self, canPerformAction: action, forItemAt: indexPath, withSender: sender) else { return false }
+		guard let value = delegate?.calendar?(self, canPerformAction: action, forItemAt: indexPath, withSender: sender) else { return false }
 		return value
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-		collectionDelegate?.calendar?(self, performAction: action, forItemAt: indexPath, withSender: sender)
+		delegate?.calendar?(self, performAction: action, forItemAt: indexPath, withSender: sender)
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, didUpdateFocusIn context: UICollectionViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator) {
-		collectionDelegate?.calendar?(self, didUpdateFocusIn: context, with: coordinator)
+		delegate?.calendar?(self, didUpdateFocusIn: context, with: coordinator)
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, canFocusItemAt indexPath: IndexPath) -> Bool {
-		guard let value = collectionDelegate?.calendar?(self, canFocusItemAt: indexPath) else { return false }
+		guard let value = delegate?.calendar?(self, canFocusItemAt: indexPath) else { return false }
 		return value
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-		guard let value = collectionDelegate?.calendar?(self, shouldShowMenuForItemAt: indexPath) else { return false }
+		guard let value = delegate?.calendar?(self, shouldShowMenuForItemAt: indexPath) else { return false }
 		return value
 	}
 	
 	public func indexPathForPreferredFocusedView(in collectionView: UICollectionView) -> IndexPath? {
-		return collectionDelegate?.indexPathForPreferredFocusedView?(in: self)
+		return delegate?.indexPathForPreferredFocusedView?(in: self)
 	}
 	
 	public func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -573,21 +573,21 @@ extension dmCalendar: UICollectionViewDataSource {
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-		guard let cell = collectionDataSource?.calendar(self, cellForItemAt: indexPath) else { return UICollectionViewCell() }
+		guard let cell = dataSource?.calendar(self, cellForItemAt: indexPath) else { return UICollectionViewCell() }
 		return cell
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-		guard let view = collectionDataSource?.calendar?(self, viewForSupplementaryElementOfKind: kind, at: indexPath) else { return UICollectionReusableView() }
+		guard let view = dataSource?.calendar?(self, viewForSupplementaryElementOfKind: kind, at: indexPath) else { return UICollectionReusableView() }
 		return view
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, indexPathForIndexTitle title: String, at index: Int) -> IndexPath {
-		guard let indexPath = collectionDataSource?.calendar?(self, indexPathForIndexTitle: title, at: index) else { return IndexPath(item: 0, section: 0) }
+		guard let indexPath = dataSource?.calendar?(self, indexPathForIndexTitle: title, at: index) else { return IndexPath(item: 0, section: 0) }
 		return indexPath
 	}
 	
 	public func indexTitles(for collectionView: UICollectionView) -> [String]? {
-		return collectionDataSource?.indexTitles?(for: self)
+		return dataSource?.indexTitles?(for: self)
 	}
 }
