@@ -63,9 +63,9 @@ extension ViewController: dmCalendarCollectionDelegate, dmCalendarCollectionData
 	}
 	
 	func calendar(_ calendar: dmCalendar, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-		guard let view = calendar.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "ExampleHeader", for: indexPath) as? ExampleHeader, let date = calendar.dateForIndexPath(indexPath) else { return UICollectionReusableView() }
+		guard let view = calendar.dequeueReusableSupplementaryView(ofKind: UICollectionElementKindSectionHeader, withReuseIdentifier: "ExampleHeader", for: indexPath) as? ExampleHeader else { return UICollectionReusableView() }
 		
-		view.date = calendar.calendarDateFromDate(date)
+		view.date = calendar.firstDayInSection(indexPath.section)
 		
 		return view
 	}

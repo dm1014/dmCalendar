@@ -29,9 +29,9 @@ class ExampleHeader: UICollectionReusableView {
 		return label
 	}()
 	
-	open var date: dmCalendarDate? {
+	open var date: Date? {
 		didSet {
-			guard let calendarDate = date, let date = DateFormatter().date(from: calendarDate) else { return }
+			guard let date = date else { return }
 			monthLabel.text = Constants.Formatters.date.string(from: date)
 		}
 	}
