@@ -57,13 +57,13 @@ final class dmCalendarCollectionLayout: UICollectionViewLayout {
 				if scrollDirection == .horizontal {
 					let xPathOffset = CGFloat(section) * cv.bounds.width
 					let xPos = xPathOffset + CGFloat(item % Constants.numberOfDaysInWeek) * (cv.bounds.width / CGFloat(Constants.numberOfDaysInWeek) + (minimumInteritemSpacing * 2))
-					let yPos = self.headerReferenceSize.height + CGFloat(item / Constants.numberOfDaysInWeek) * (itemSize.height + minimumLineSpacing) + self.footerReferenceSize.height
+					let yPos = self.headerReferenceSize.height + CGFloat(item / Constants.numberOfDaysInWeek) * (itemSize.height + minimumLineSpacing)
 					let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
 					attributes.frame = CGRect(x: xPos, y: yPos, width: itemSize.width, height: itemSize.height)
 					attributeDictionary[indexPath] = attributes
 				} else {
 					let xPos = CGFloat(item % Constants.numberOfDaysInWeek) * (cv.bounds.width / CGFloat(Constants.numberOfDaysInWeek) + (minimumInteritemSpacing * 2))
-					let yPos = sectionOffset + self.headerReferenceSize.height + (CGFloat(item / Constants.numberOfDaysInWeek) * (itemSize.height + minimumLineSpacing)) + self.footerReferenceSize.height
+					let yPos = sectionOffset + self.headerReferenceSize.height + (CGFloat(item / Constants.numberOfDaysInWeek) * (itemSize.height + minimumLineSpacing))
 					let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
 					attributes.frame = CGRect(x: xPos, y: yPos, width: itemSize.width, height: itemSize.height)
 					attributeDictionary[indexPath] = attributes
@@ -117,7 +117,7 @@ final class dmCalendarCollectionLayout: UICollectionViewLayout {
 				attribute.frame = CGRect(x: cv.bounds.width * CGFloat(section), y: 0.0, width: headerReferenceSize.width, height: headerReferenceSize.height)
 			} else {
 				attribute.frame = CGRect(x: 0.0, y: sectionOffset, width: headerReferenceSize.width, height: headerReferenceSize.height)
-				sectionOffset += (headerReferenceSize.height + (CGFloat(items / Constants.numberOfDaysInWeek) * (itemSize.height + minimumLineSpacing)))
+				sectionOffset += (headerReferenceSize.height + (CGFloat(items / Constants.numberOfDaysInWeek) * (itemSize.height + minimumLineSpacing)) + footerReferenceSize.height)
 			}
 			
 			attribute.zIndex = 999 /// Ensures the header is always on top of the cells
@@ -130,7 +130,7 @@ final class dmCalendarCollectionLayout: UICollectionViewLayout {
 	fileprivate func getSectionFooterAttributes() -> [IndexPath: UICollectionViewLayoutAttributes] {
 		guard let cv = collectionView else { return [:] }
 		var attributes: [IndexPath: UICollectionViewLayoutAttributes] = [:]
-		var sectionOffset: CGFloat = 0.0
+		var sectionOffset: CGFloat = -footerReferenceSize.height
 		
 		for section in 0..<cv.numberOfSections {
 			let items = cv.numberOfItems(inSection: section)
@@ -138,10 +138,10 @@ final class dmCalendarCollectionLayout: UICollectionViewLayout {
 			let attribute = UICollectionViewLayoutAttributes(forSupplementaryViewOfKind: UICollectionElementKindSectionFooter, with: indexPath)
 			
 			if scrollDirection == .horizontal {
-				attribute.frame = CGRect(x: cv.bounds.width * CGFloat(section), y: 0.0, width: footerReferenceSize.width, height: footerReferenceSize.height)
+				attribute.frame = CGRect(x: cv.bounds.width * CGFloat(section), y: cv.bounds.height - footerReferenceSize.height, width: footerReferenceSize.width, height: footerReferenceSize.height)
 			} else {
+				sectionOffset += (headerReferenceSize.height + (CGFloat(items / Constants.numberOfDaysInWeek) * (itemSize.height + minimumLineSpacing)) + footerReferenceSize.height)
 				attribute.frame = CGRect(x: 0.0, y: sectionOffset, width: footerReferenceSize.width, height: footerReferenceSize.height)
-				sectionOffset += (footerReferenceSize.height + (CGFloat(items / Constants.numberOfDaysInWeek) * (itemSize.height + minimumLineSpacing)))
 			}
 			
 			attribute.zIndex = 999 /// Ensures the footer is always on top of the cells
