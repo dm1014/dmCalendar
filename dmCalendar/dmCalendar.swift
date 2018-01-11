@@ -58,13 +58,6 @@ public final class dmCalendar: UIView, dmCalendarCollectionViewDelegate, UIColle
 	
 	var desiredDates: [Date] = []
 	var shouldMonitorScroll = false
-	var maxRange: Int = 60 {
-		didSet {
-			maxRangeDate = NSCalendar.current.date(byAdding: .day, value: maxRange, to: focusedDate)
-		}
-	}
-	
-	fileprivate var maxRangeDate: Date?
 	
 	public init(focusingOn date: Date, properties: dmCalendarProperties) {
 		self.focusedDate = date
@@ -72,28 +65,45 @@ public final class dmCalendar: UIView, dmCalendarCollectionViewDelegate, UIColle
 		
 		super.init(frame: .zero)
 		
-		// swiftlint:disable:next force_cast
+		setupCalendar()
+		setupDates()
+		setupViews()
+	}
+	
+	override public func layoutSubviews() {
+		super.layoutSubviews()
+		calendarCollection.collectionViewLayout.invalidateLayout()
+		updateCellSize()
+		updateReusableViewSizes()
+	}
+	
+	override public func willMove(toSuperview newSuperview: UIView?) {
+		super.willMove(toSuperview: newSuperview)
+		
+		if newSuperview != nil, let indexPath = indexPathForDate(focusedDate) {
+			DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: {
+				self.calendarCollection.scrollToItem(at: indexPath, at: .centeredVertically, animated: false)
+			})
+		}
+	}
+	
+	required public init?(coder aDecoder: NSCoder) {
+		fatalError("init(coder:) has not been implemented")
+	}
+	
+	fileprivate func setupCalendar() {
 		let layout = calendarCollection.collectionViewLayout as! dmCalendarCollectionLayout
 		layout.scrollDirection = properties.scrollDirection
 		layout.minimumLineSpacing = properties.minimumLineSpacing
 		layout.minimumInteritemSpacing = properties.minimumInteritemSpacing
-		layout.headerReferenceSize = properties.headerReferenceSize
-		
-		switch properties.itemSize {
-		case .sizeToFit:
-			if properties.isPagingEnabled {
-				layout.itemSize = CGSize(width: properties.calendarSize.width / CGFloat(Constants.numberOfDaysInWeek), height: (properties.calendarSize.height - properties.headerReferenceSize.height) / CGFloat(Constants.maximumNumberOfRows))
-			} else {
-				layout.itemSize = CGSize(width: properties.calendarSize.width / CGFloat(Constants.numberOfDaysInWeek), height: properties.calendarSize.width / CGFloat(Constants.numberOfDaysInWeek))
-			}
-		case .custom(let height):
-			layout.itemSize = CGSize(width: properties.calendarSize.width / CGFloat(Constants.numberOfDaysInWeek), height: height)
-		}
 		
 		calendarCollection.isPagingEnabled = properties.isPagingEnabled
 		calendarCollection.allowsSelection = properties.allowSelection
 		calendarCollection.allowsMultipleSelection = properties.allowMultipleSelection
-		guard let nowGregorianDate = gregorian.date(from: gregorian.dateComponents([.year, .month], from: date)) else { fatalError("Can't convert date to gregorian") }
+	}
+	
+	fileprivate func setupDates() {
+		guard let nowGregorianDate = gregorian.date(from: gregorian.dateComponents([.year, .month], from: focusedDate)) else { fatalError("Can't convert date to gregorian") }
 		
 		let nowDate = nowGregorianDate
 		
@@ -118,18 +128,11 @@ public final class dmCalendar: UIView, dmCalendarCollectionViewDelegate, UIColle
 		guard let toGregorianDate = gregorian.date(byAdding: futureMonths, to: nowDate) else { fatalError("Can't convert date to gregorian") }
 		
 		toDate = self.calendarDateFromDate(toGregorianDate)
-		
+
 		DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: {
-			guard let futureDate = self.gregorian.date(byAdding: .day, value: self.maxRange, to: nowDate) else { return }
+			guard let futureDate = self.gregorian.date(byAdding: .day, value: 60, to: nowDate) else { return }
 			self.calendarPositionDelegate?.calendar(self, didChange: true, fromDate: nowDate, toDate: futureDate)
-			
 		})
-		
-		setupViews()
-	}
-	
-	required public init?(coder aDecoder: NSCoder) {
-		fatalError("init(coder:) has not been implemented")
 	}
 	
 	fileprivate func setupViews() {
@@ -138,25 +141,9 @@ public final class dmCalendar: UIView, dmCalendarCollectionViewDelegate, UIColle
 		let calendarTop = calendarCollection.topAnchor.constraint(equalTo: topAnchor)
 		let calendarLeft = calendarCollection.leftAnchor.constraint(equalTo: leftAnchor)
 		let calendarRight = calendarCollection.rightAnchor.constraint(equalTo: rightAnchor)
-		let calendarHeight = calendarCollection.heightAnchor.constraint(equalToConstant: properties.calendarSize.height)
 		let calendarBottom = calendarCollection.bottomAnchor.constraint(equalTo: bottomAnchor)
 		
-		NSLayoutConstraint.activate([calendarTop, calendarLeft, calendarRight, calendarHeight, calendarBottom])
-	}
-	
-	override public func layoutSubviews() {
-		super.layoutSubviews()
-		calendarCollection.collectionViewLayout.invalidateLayout()
-	}
-	
-	override public func willMove(toSuperview newSuperview: UIView?) {
-		super.willMove(toSuperview: newSuperview)
-		
-		if newSuperview != nil, let indexPath = indexPathForDate(focusedDate) {
-			DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(100), execute: {
-				self.calendarCollection.scrollToItem(at: indexPath, at: .centeredVertically, animated: false)
-			})
-		}
+		NSLayoutConstraint.activate([calendarTop, calendarLeft, calendarRight, calendarBottom])
 	}
 	
 	public final func calendarCollectionViewWillLayoutSubview(_ collection: dmCalendarCollectionView) {
@@ -178,7 +165,26 @@ public final class dmCalendar: UIView, dmCalendarCollectionViewDelegate, UIColle
 				addFutureDates()
 			}
 		}
-		
+	}
+	
+	fileprivate func updateCellSize() {
+		guard let layout = calendarCollection.collectionViewLayout as? dmCalendarCollectionLayout else { return }
+		switch properties.itemSize {
+		case .sizeToFit:
+			if properties.isPagingEnabled {
+				layout.itemSize = CGSize(width: bounds.width / CGFloat(Constants.numberOfDaysInWeek), height: (bounds.height - properties.headerReferenceSizeHeight - properties.footerReferenceSizeHeight) / CGFloat(Constants.maximumNumberOfRows))
+			} else {
+				layout.itemSize = CGSize(width: bounds.width / CGFloat(Constants.numberOfDaysInWeek), height: bounds.width / CGFloat(Constants.numberOfDaysInWeek))
+			}
+		case .custom(let height):
+			layout.itemSize = CGSize(width: bounds.width / CGFloat(Constants.numberOfDaysInWeek), height: height)
+		}
+	}
+	
+	fileprivate func updateReusableViewSizes() {
+		guard let layout = calendarCollection.collectionViewLayout as? dmCalendarCollectionLayout else { return }
+		layout.headerReferenceSize = CGSize(width: bounds.width, height: properties.headerReferenceSizeHeight)
+		layout.footerReferenceSize = CGSize(width: bounds.width, height: properties.footerReferenceSizeHeight)
 	}
 	
 	fileprivate func addPastDates() {
@@ -210,7 +216,7 @@ public final class dmCalendar: UIView, dmCalendarCollectionViewDelegate, UIColle
 		fromDate = calendarDateFromDate(fDate)
 		toDate = calendarDateFromDate(tDate)
 		
-		if shouldMonitorScroll, addingFutureDates, let maxRangeDate = maxRangeDate, tDate < maxRangeDate {
+		if shouldMonitorScroll, addingFutureDates {
 			calendarPositionDelegate?.calendar(self, didChange: true, fromDate: fDate, toDate: tDate)
 		}
 		
@@ -298,7 +304,7 @@ public final class dmCalendar: UIView, dmCalendarCollectionViewDelegate, UIColle
 	}
 }
 
-/// Public functions to get date
+// MARK: - Calendar Dates Helpers
 extension dmCalendar {
 	public final func calendarDateFromDate(_ date: Date) -> dmCalendarDate {
 		let components = gregorian.dateComponents([.year, .month, .day], from: date)
@@ -417,6 +423,13 @@ extension dmCalendar {
 		return (dates, paths)
 	}
 	
+	public final func isDate(_ date1: Date, inSameDayAs date2: Date) -> Bool {
+		return gregorian.isDate(date1, inSameDayAs: date2)
+	}
+}
+
+// MARK: - Reloading Data
+extension dmCalendar {
 	public final func reloadItems(at indexPaths: [IndexPath]) {
 		calendarCollection.reloadItems(at: indexPaths)
 	}
@@ -428,12 +441,9 @@ extension dmCalendar {
 	public final func reloadVisibleItems() {
 		calendarCollection.reloadItems(at: calendarCollection.indexPathsForVisibleItems)
 	}
-	
-	public final func isDate(_ date1: Date, inSameDayAs date2: Date) -> Bool {
-		return gregorian.isDate(date1, inSameDayAs: date2)
-	}
 }
 
+// MARK: - Selecting/Deselecting Items
 extension dmCalendar {
 	public final func selectItem(at indexPath: IndexPath, animated: Bool, scrollPosition: UICollectionViewScrollPosition) {
 		calendarCollection.selectItem(at: indexPath, animated: animated, scrollPosition: scrollPosition)
@@ -444,6 +454,7 @@ extension dmCalendar {
 	}
 }
 
+// MARK: - Registering Cells/Views
 extension dmCalendar {
 	func register(_ cellClass: AnyClass?, forCellWithReuseIdentifier identifier: String) {
 		calendarCollection.register(cellClass, forCellWithReuseIdentifier: identifier)
@@ -474,7 +485,8 @@ extension dmCalendar {
 	}
 }
 
-extension dmCalendar: UICollectionViewDataSource {
+// MARK: - dmCalendarCollectionDelegate
+extension dmCalendar: UICollectionViewDelegate {
 	public func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
 		guard let value = delegate?.calendar?(self, shouldSelectItemAt: indexPath) else { return true }
 		return value
@@ -551,20 +563,23 @@ extension dmCalendar: UICollectionViewDataSource {
 		return value
 	}
 	
+	public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+		guard let layout = calendarCollection.collectionViewLayout as? dmCalendarCollectionLayout, let size = delegate?.calendar?(self, layout: layout, referenceSizeForHeaderInSection: section) else { return .zero }
+		return size
+	}
+	
 	public func indexPathForPreferredFocusedView(in collectionView: UICollectionView) -> IndexPath? {
 		return delegate?.indexPathForPreferredFocusedView?(in: self)
 	}
-	
+}
+
+// MARK: - dmCalendarCollectionDataSource
+extension dmCalendar: UICollectionViewDataSource  {
 	public func numberOfSections(in collectionView: UICollectionView) -> Int {
 		return gregorian.dateComponents([.month], from: dateFromCalendarDate(fromDate), to: dateFromCalendarDate(toDate)).month ?? 0
 	}
 	
 	public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-		
-		//        return Constants.numberOfDaysInWeek * Constants.maximumNumberOfRows
-		
-		// MARK: - Maybe add this back in at some point in the future. Instead of having a set number of cells(42), it will go to the last day in the month and add in any extra cells to account fill the month
-		
 		if (properties.scrollDirection == .vertical && properties.isPagingEnabled) || properties.scrollDirection == .horizontal {
 			return Constants.numberOfDaysInWeek * Constants.maximumNumberOfRows
 		} else {

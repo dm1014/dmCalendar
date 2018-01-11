@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D5A735312006AFBE00502849 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A735302006AFBE00502849 /* AppDelegate.swift */; };
 		D5A735332006AFBE00502849 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A735322006AFBE00502849 /* ViewController.swift */; };
-		D5A735362006AFBE00502849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5A735342006AFBE00502849 /* Main.storyboard */; };
 		D5A735382006AFBE00502849 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D5A735372006AFBE00502849 /* Assets.xcassets */; };
 		D5A7353B2006AFBE00502849 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D5A735392006AFBE00502849 /* LaunchScreen.storyboard */; };
 		D5A7354A2006AFDB00502849 /* dmCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A735432006AFDB00502849 /* dmCalendar.swift */; };
@@ -19,13 +18,14 @@
 		D5A7354E2006AFDB00502849 /* dmCalendarCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A735472006AFDB00502849 /* dmCalendarCollectionDelegate.swift */; };
 		D5A7354F2006AFDB00502849 /* dmCalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A735482006AFDB00502849 /* dmCalendarDate.swift */; };
 		D5A735502006AFDB00502849 /* dmCalendarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A735492006AFDB00502849 /* dmCalendarCollectionView.swift */; };
+		D5A735572006C37B00502849 /* ExampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A735562006C37B00502849 /* ExampleCell.swift */; };
+		D5A975F82007E35000920D60 /* ExampleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A975F72007E35000920D60 /* ExampleHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D5A7352D2006AFBE00502849 /* dmCalendarExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dmCalendarExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5A735302006AFBE00502849 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D5A735322006AFBE00502849 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D5A735352006AFBE00502849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D5A735372006AFBE00502849 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D5A7353A2006AFBE00502849 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D5A7353C2006AFBE00502849 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -36,6 +36,8 @@
 		D5A735472006AFDB00502849 /* dmCalendarCollectionDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dmCalendarCollectionDelegate.swift; sourceTree = "<group>"; };
 		D5A735482006AFDB00502849 /* dmCalendarDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dmCalendarDate.swift; sourceTree = "<group>"; };
 		D5A735492006AFDB00502849 /* dmCalendarCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dmCalendarCollectionView.swift; sourceTree = "<group>"; };
+		D5A735562006C37B00502849 /* ExampleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCell.swift; sourceTree = "<group>"; };
+		D5A975F72007E35000920D60 /* ExampleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,8 +72,8 @@
 			children = (
 				D5A735422006AFDB00502849 /* dmCalendar */,
 				D5A735302006AFBE00502849 /* AppDelegate.swift */,
-				D5A735322006AFBE00502849 /* ViewController.swift */,
-				D5A735342006AFBE00502849 /* Main.storyboard */,
+				D5A735552006C36C00502849 /* View Controllers */,
+				D5A735542006C36600502849 /* Views */,
 				D5A735372006AFBE00502849 /* Assets.xcassets */,
 				D5A735392006AFBE00502849 /* LaunchScreen.storyboard */,
 				D5A7353C2006AFBE00502849 /* Info.plist */,
@@ -92,6 +94,23 @@
 			);
 			name = dmCalendar;
 			path = ../../../dmCalendar;
+			sourceTree = "<group>";
+		};
+		D5A735542006C36600502849 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D5A735562006C37B00502849 /* ExampleCell.swift */,
+				D5A975F72007E35000920D60 /* ExampleHeader.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D5A735552006C36C00502849 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D5A735322006AFBE00502849 /* ViewController.swift */,
+			);
+			path = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -155,7 +174,6 @@
 			files = (
 				D5A7353B2006AFBE00502849 /* LaunchScreen.storyboard in Resources */,
 				D5A735382006AFBE00502849 /* Assets.xcassets in Resources */,
-				D5A735362006AFBE00502849 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -166,7 +184,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D5A735572006C37B00502849 /* ExampleCell.swift in Sources */,
 				D5A7354F2006AFDB00502849 /* dmCalendarDate.swift in Sources */,
+				D5A975F82007E35000920D60 /* ExampleHeader.swift in Sources */,
 				D5A7354C2006AFDB00502849 /* dmCalendarCollectionDataSource.swift in Sources */,
 				D5A7354B2006AFDB00502849 /* dmCalendarCollectionLayout.swift in Sources */,
 				D5A735332006AFBE00502849 /* ViewController.swift in Sources */,
@@ -181,14 +201,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		D5A735342006AFBE00502849 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D5A735352006AFBE00502849 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D5A735392006AFBE00502849 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

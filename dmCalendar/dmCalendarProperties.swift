@@ -14,26 +14,14 @@ enum dmCalendarItemSize {
 	case custom(CGFloat)
 }
 
-public struct dmCalendarProperties {
-	let calendarSize: CGSize
-	let itemSize: dmCalendarItemSize
-	let headerReferenceSize: CGSize
-	let scrollDirection: UICollectionViewScrollDirection
-	let minimumLineSpacing: CGFloat
-	let minimumInteritemSpacing: CGFloat
-	let isPagingEnabled: Bool
-	let allowSelection: Bool
-	let allowMultipleSelection: Bool
-	
-	init(calendarSize: CGSize, itemSize: dmCalendarItemSize, headerReferenceSize: CGSize, scrollDirection: UICollectionViewScrollDirection, minimumLineSpacing: CGFloat, minimumInteritemSpacing: CGFloat, isPagingEnabled: Bool, allowSelection: Bool, allowMultipleSelection: Bool) {
-		self.calendarSize = calendarSize
-		self.itemSize = itemSize
-		self.headerReferenceSize = headerReferenceSize
-		self.scrollDirection = scrollDirection
-		self.minimumLineSpacing = minimumLineSpacing
-		self.minimumInteritemSpacing = minimumInteritemSpacing
-		self.isPagingEnabled = scrollDirection == .horizontal || isPagingEnabled == true
-		self.allowSelection = allowSelection
-		self.allowMultipleSelection = allowMultipleSelection
-	}
+public class dmCalendarProperties {
+	var itemSize: dmCalendarItemSize = .sizeToFit
+	var headerReferenceSizeHeight: CGFloat = 0.0
+	var footerReferenceSizeHeight: CGFloat = 0.0
+	var scrollDirection: UICollectionViewScrollDirection = .vertical
+	var minimumLineSpacing: CGFloat = 0.0
+	var minimumInteritemSpacing: CGFloat = 0.0
+	var isPagingEnabled: Bool = false
+	var allowSelection: Bool = true
+	var allowMultipleSelection: Bool = false
 }
