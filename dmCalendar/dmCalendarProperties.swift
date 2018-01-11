@@ -9,13 +9,13 @@
 import Foundation
 import UIKit
 
-enum dmCalendarItemSize {
-	case sizeToFit
+enum dmCalendarItemSizeHeight {
+	case equalToWidth
 	case custom(CGFloat)
 }
 
 public class dmCalendarProperties {
-	var itemSize: dmCalendarItemSize = .sizeToFit
+	var itemSizeHeight: dmCalendarItemSizeHeight = .equalToWidth
 	var headerReferenceSizeHeight: CGFloat = 0.0
 	var footerReferenceSizeHeight: CGFloat = 0.0
 	var scrollDirection: UICollectionViewScrollDirection = .vertical

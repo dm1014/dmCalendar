@@ -169,8 +169,8 @@ public final class dmCalendar: UIView, dmCalendarCollectionViewDelegate, UIColle
 	
 	fileprivate func updateCellSize() {
 		guard let layout = calendarCollection.collectionViewLayout as? dmCalendarCollectionLayout else { return }
-		switch properties.itemSize {
-		case .sizeToFit:
+		switch properties.itemSizeHeight {
+		case .equalToWidth:
 			if properties.isPagingEnabled {
 				layout.itemSize = CGSize(width: bounds.width / CGFloat(Constants.numberOfDaysInWeek), height: (bounds.height - properties.headerReferenceSizeHeight - properties.footerReferenceSizeHeight) / CGFloat(Constants.maximumNumberOfRows))
 			} else {

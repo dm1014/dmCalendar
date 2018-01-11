@@ -20,6 +20,7 @@
 		D5A735502006AFDB00502849 /* dmCalendarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A735492006AFDB00502849 /* dmCalendarCollectionView.swift */; };
 		D5A735572006C37B00502849 /* ExampleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A735562006C37B00502849 /* ExampleCell.swift */; };
 		D5A975F82007E35000920D60 /* ExampleHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A975F72007E35000920D60 /* ExampleHeader.swift */; };
+		D5A9760220080F2700920D60 /* ExampleFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5A9760120080F2700920D60 /* ExampleFooter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		D5A735492006AFDB00502849 /* dmCalendarCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = dmCalendarCollectionView.swift; sourceTree = "<group>"; };
 		D5A735562006C37B00502849 /* ExampleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleCell.swift; sourceTree = "<group>"; };
 		D5A975F72007E35000920D60 /* ExampleHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleHeader.swift; sourceTree = "<group>"; };
+		D5A9760120080F2700920D60 /* ExampleFooter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleFooter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 			children = (
 				D5A735562006C37B00502849 /* ExampleCell.swift */,
 				D5A975F72007E35000920D60 /* ExampleHeader.swift */,
+				D5A9760120080F2700920D60 /* ExampleFooter.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				D5A975F82007E35000920D60 /* ExampleHeader.swift in Sources */,
 				D5A7354C2006AFDB00502849 /* dmCalendarCollectionDataSource.swift in Sources */,
 				D5A7354B2006AFDB00502849 /* dmCalendarCollectionLayout.swift in Sources */,
+				D5A9760220080F2700920D60 /* ExampleFooter.swift in Sources */,
 				D5A735332006AFBE00502849 /* ViewController.swift in Sources */,
 				D5A7354A2006AFDB00502849 /* dmCalendar.swift in Sources */,
 				D5A7354E2006AFDB00502849 /* dmCalendarCollectionDelegate.swift in Sources */,
