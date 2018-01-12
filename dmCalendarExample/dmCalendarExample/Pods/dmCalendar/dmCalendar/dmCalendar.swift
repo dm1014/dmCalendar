@@ -52,12 +52,12 @@ public final class dmCalendar: UIView, dmCalendarCollectionViewDelegate, UIColle
 	fileprivate var selectedIndexPath: IndexPath = IndexPath(item: 0, section: 0)
 	fileprivate var selectedDate: Date = Date()
 	
-	public weak var delegate: dmCalendarCollectionDelegate?
-	public weak var dataSource: dmCalendarCollectionDataSource?
-	public weak var calendarPositionDelegate: dmCalendarPositionDelegate?
+	weak var delegate: dmCalendarCollectionDelegate?
+	weak var dataSource: dmCalendarCollectionDataSource?
+	weak var calendarPositionDelegate: dmCalendarPositionDelegate?
 	
-	public var desiredDates: [Date] = []
-	public var shouldMonitorScroll = false
+	var desiredDates: [Date] = []
+	var shouldMonitorScroll = false
 	
 	public init(focusingOn date: Date, properties: dmCalendarProperties) {
 		self.focusedDate = date

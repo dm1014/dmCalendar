@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public enum dmCalendarItemSizeHeight {
+enum dmCalendarItemSizeHeight {
 	case equalToWidth
 	case custom(CGFloat)
 }

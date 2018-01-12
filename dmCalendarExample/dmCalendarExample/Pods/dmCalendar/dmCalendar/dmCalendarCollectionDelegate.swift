@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-@objc public protocol dmCalendarCollectionDelegate: class {
+@objc protocol dmCalendarCollectionDelegate: class {
 	@objc optional func calendar(_ calendar: dmCalendar, shouldSelectItemAt indexPath: IndexPath) -> Bool
 	@objc optional func calendar(_ calendar: dmCalendar, shouldDeselectItemAt indexPath: IndexPath) -> Bool
 	@objc optional func calendar(_ calendar: dmCalendar, shouldHighlightItemAt indexPath: IndexPath) -> Bool
