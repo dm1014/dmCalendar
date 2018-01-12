@@ -7,109 +7,45 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3495209012636F2B334E76FE8276C013 /* dmCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81892FF4E33F9B57ACBAB012134098EB /* dmCalendar.swift */; };
-		544F660ADEEF1BCD265C9C55F731EE65 /* dmCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E7D7228347AB4AC80B3FF4F52BA0E1BA /* dmCalendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		623DDCEFA3EAFA932C1E560E6DD83AAB /* dmCalendarCollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3810481C2855EC6D61F3F9B0F7D2FACD /* dmCalendarCollectionDelegate.swift */; };
-		65EC7F6D3013B4AB1DDF443A34D396DC /* dmCalendarCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CAB610B6ABA6F0BF4213F34ABBE3305 /* dmCalendarCollectionView.swift */; };
-		6D583E5F459D363B56B47DB617899A64 /* Pods-dmCalendarExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5989D9260B98EF02DF75F09EAF1A9A /* Pods-dmCalendarExample-dummy.m */; };
-		85A7B701C615195FF9BC73E37D4D6933 /* dmCalendarDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4516FB1E931816DDC10AC9B76BC0D345 /* dmCalendarDate.swift */; };
-		8A9E04B2E2303AD456B50B19D3C92751 /* Pods-dmCalendarExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 52B172EC908B6CA14BFF5AAC8C99F562 /* Pods-dmCalendarExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A2D2D7AAE4D72A462C28F1AA4D26923E /* dmCalendarCollectionLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8349878E594324C283611E2FF5611758 /* dmCalendarCollectionLayout.swift */; };
-		BFC7CAC006C0F767DB77AFF605E7A696 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		D203DEB92F4EFC73D6BE7D2ADA93B0B6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
-		E3DCBD1C8C642E212FADE6BC18310328 /* dmCalendarCollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13C734829643D4B875ADB8903BE8BFE /* dmCalendarCollectionDataSource.swift */; };
-		E50A2C0CB312EC6667E6A9FFEB3A0660 /* dmCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 88FF1E5EDCE2B499C3B56A32C53D2384 /* dmCalendar-dummy.m */; };
-		F6334DF05C9ACDCF8022ED24A7DA7D0D /* dmCalendarProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC321DC42E3DCBBF261F38337165383A /* dmCalendarProperties.swift */; };
+		060428D1F4C293311AFABDEE804E9B4D /* Pods-dmCalendarExample-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 52B172EC908B6CA14BFF5AAC8C99F562 /* Pods-dmCalendarExample-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A64FCAE8A6883B022855EA7F2FA61AC7 /* Pods-dmCalendarExample-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E5989D9260B98EF02DF75F09EAF1A9A /* Pods-dmCalendarExample-dummy.m */; };
+		F1C66CF250C156EC7A506D864E1FD749 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		3F4008AA2F3ACA159A87A70F9F161DB8 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = EC7331C78A840EF25818A86FDD25BF7F;
-			remoteInfo = dmCalendar;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		0CAB610B6ABA6F0BF4213F34ABBE3305 /* dmCalendarCollectionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = dmCalendarCollectionView.swift; path = dmCalendar/dmCalendarCollectionView.swift; sourceTree = "<group>"; };
-		0DB3AA31E043ED38B25175C103ADB207 /* Pods_dmCalendarExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_dmCalendarExample.framework; path = "Pods-dmCalendarExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E4F84AF5A7E412A607CB2E3F6DC2957 /* Pods-dmCalendarExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-dmCalendarExample.debug.xcconfig"; sourceTree = "<group>"; };
 		0FBEECEBDB315DD3B327ABDD8B1F82BE /* Pods-dmCalendarExample-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-dmCalendarExample-resources.sh"; sourceTree = "<group>"; };
-		3810481C2855EC6D61F3F9B0F7D2FACD /* dmCalendarCollectionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = dmCalendarCollectionDelegate.swift; path = dmCalendar/dmCalendarCollectionDelegate.swift; sourceTree = "<group>"; };
-		4516FB1E931816DDC10AC9B76BC0D345 /* dmCalendarDate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = dmCalendarDate.swift; path = dmCalendar/dmCalendarDate.swift; sourceTree = "<group>"; };
 		52B172EC908B6CA14BFF5AAC8C99F562 /* Pods-dmCalendarExample-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-dmCalendarExample-umbrella.h"; sourceTree = "<group>"; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		75E117B4C19338D9E9995E0CAF86C1D1 /* Pods-dmCalendarExample.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-dmCalendarExample.modulemap"; sourceTree = "<group>"; };
-		81892FF4E33F9B57ACBAB012134098EB /* dmCalendar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = dmCalendar.swift; path = dmCalendar/dmCalendar.swift; sourceTree = "<group>"; };
 		827A9736EC874A96399E3846D7303D7C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		8349878E594324C283611E2FF5611758 /* dmCalendarCollectionLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = dmCalendarCollectionLayout.swift; path = dmCalendar/dmCalendarCollectionLayout.swift; sourceTree = "<group>"; };
-		88FF1E5EDCE2B499C3B56A32C53D2384 /* dmCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "dmCalendar-dummy.m"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9C66386986FC3D301D12D170D2989CBC /* Pods_dmCalendarExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_dmCalendarExample.framework; path = "Pods-dmCalendarExample.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9E5989D9260B98EF02DF75F09EAF1A9A /* Pods-dmCalendarExample-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dmCalendarExample-dummy.m"; sourceTree = "<group>"; };
-		A3E3B4FB42B8ED1FD664CCCAAAE956A4 /* dmCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = dmCalendar.framework; path = dmCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE1B93D6D2FA1645AF63EFD60B5579AC /* Pods-dmCalendarExample-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-dmCalendarExample-acknowledgements.markdown"; sourceTree = "<group>"; };
-		BA8FAB3C80F32CA51330BB732A413D64 /* dmCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "dmCalendar-prefix.pch"; sourceTree = "<group>"; };
-		BFEB43274BE43B8F3B77D19BFF801D2F /* dmCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = dmCalendar.modulemap; sourceTree = "<group>"; };
 		C40550FC1A6AB04E95209D7319597C83 /* Pods-dmCalendarExample-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-dmCalendarExample-acknowledgements.plist"; sourceTree = "<group>"; };
-		CC321DC42E3DCBBF261F38337165383A /* dmCalendarProperties.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = dmCalendarProperties.swift; path = dmCalendar/dmCalendarProperties.swift; sourceTree = "<group>"; };
-		D13C734829643D4B875ADB8903BE8BFE /* dmCalendarCollectionDataSource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = dmCalendarCollectionDataSource.swift; path = dmCalendar/dmCalendarCollectionDataSource.swift; sourceTree = "<group>"; };
 		D3F3368238607B0198BD9AA7B40CE0EE /* Pods-dmCalendarExample-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-dmCalendarExample-frameworks.sh"; sourceTree = "<group>"; };
-		D79F981FF5889EC5470C3D0EE486732A /* dmCalendar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = dmCalendar.xcconfig; sourceTree = "<group>"; };
 		DD0F75876654CC7402FEADAE923C91B5 /* Pods-dmCalendarExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-dmCalendarExample.release.xcconfig"; sourceTree = "<group>"; };
-		E7D7228347AB4AC80B3FF4F52BA0E1BA /* dmCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "dmCalendar-umbrella.h"; sourceTree = "<group>"; };
-		F5496C0831A286AA3CF1BA99E4FD935E /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		9CDC82E3FEE29853760D068BAE3ABC0E /* Frameworks */ = {
+		82713FBA177EA6DFEBDA74774E40F2F9 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D203DEB92F4EFC73D6BE7D2ADA93B0B6 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CD5B31A02FA0F7ADAD93046E10C7E2BC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BFC7CAC006C0F767DB77AFF605E7A696 /* Foundation.framework in Frameworks */,
+				F1C66CF250C156EC7A506D864E1FD749 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		09CF39D8BE51C467735B788BE6D59758 /* dmCalendar */ = {
+		47B5FA11DDE330DFEC7DCB45DA867F26 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				81892FF4E33F9B57ACBAB012134098EB /* dmCalendar.swift */,
-				D13C734829643D4B875ADB8903BE8BFE /* dmCalendarCollectionDataSource.swift */,
-				3810481C2855EC6D61F3F9B0F7D2FACD /* dmCalendarCollectionDelegate.swift */,
-				8349878E594324C283611E2FF5611758 /* dmCalendarCollectionLayout.swift */,
-				0CAB610B6ABA6F0BF4213F34ABBE3305 /* dmCalendarCollectionView.swift */,
-				4516FB1E931816DDC10AC9B76BC0D345 /* dmCalendarDate.swift */,
-				CC321DC42E3DCBBF261F38337165383A /* dmCalendarProperties.swift */,
-				17CA054D89B2133ADCA32D4AE050757C /* Support Files */,
+				9C66386986FC3D301D12D170D2989CBC /* Pods_dmCalendarExample.framework */,
 			);
-			name = dmCalendar;
-			path = dmCalendar;
-			sourceTree = "<group>";
-		};
-		17CA054D89B2133ADCA32D4AE050757C /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				BFEB43274BE43B8F3B77D19BFF801D2F /* dmCalendar.modulemap */,
-				D79F981FF5889EC5470C3D0EE486732A /* dmCalendar.xcconfig */,
-				88FF1E5EDCE2B499C3B56A32C53D2384 /* dmCalendar-dummy.m */,
-				BA8FAB3C80F32CA51330BB732A413D64 /* dmCalendar-prefix.pch */,
-				E7D7228347AB4AC80B3FF4F52BA0E1BA /* dmCalendar-umbrella.h */,
-				F5496C0831A286AA3CF1BA99E4FD935E /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/dmCalendar";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		6D7E0D588D0C9B3683AE3772A759F23B /* Pods-dmCalendarExample */ = {
@@ -135,27 +71,9 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				9C5C8D7E29FC8955E8066BD09BB130CE /* Pods */,
-				981401A7F2D75C8FF86C47D2616CF08D /* Products */,
+				47B5FA11DDE330DFEC7DCB45DA867F26 /* Products */,
 				AC4F9758BFB351C64C2D347A49A9CE23 /* Targets Support Files */,
 			);
-			sourceTree = "<group>";
-		};
-		981401A7F2D75C8FF86C47D2616CF08D /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A3E3B4FB42B8ED1FD664CCCAAAE956A4 /* dmCalendar.framework */,
-				0DB3AA31E043ED38B25175C103ADB207 /* Pods_dmCalendarExample.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		9C5C8D7E29FC8955E8066BD09BB130CE /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				09CF39D8BE51C467735B788BE6D59758 /* dmCalendar */,
-			);
-			name = Pods;
 			sourceTree = "<group>";
 		};
 		AC4F9758BFB351C64C2D347A49A9CE23 /* Targets Support Files */ = {
@@ -185,58 +103,32 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		21AEE974D97973EDC155F5FD00A8640B /* Headers */ = {
+		DCD24FE580590DB7DD3D85E7DBA7AA46 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8A9E04B2E2303AD456B50B19D3C92751 /* Pods-dmCalendarExample-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		555D3F763A3C5D6E520DA3AB6E75A669 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				544F660ADEEF1BCD265C9C55F731EE65 /* dmCalendar-umbrella.h in Headers */,
+				060428D1F4C293311AFABDEE804E9B4D /* Pods-dmCalendarExample-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		80725E9319119FB54C7C860067231765 /* Pods-dmCalendarExample */ = {
+		91D2B3C0F3EA3C8D34AC386F081D8D1E /* Pods-dmCalendarExample */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 9F58E30324CF79F338A26FEDA1BB0477 /* Build configuration list for PBXNativeTarget "Pods-dmCalendarExample" */;
+			buildConfigurationList = E07254760FBF679A9A15BAC03AD20916 /* Build configuration list for PBXNativeTarget "Pods-dmCalendarExample" */;
 			buildPhases = (
-				235D5A1FD30CB2C00AEE2B670953AC0E /* Sources */,
-				9CDC82E3FEE29853760D068BAE3ABC0E /* Frameworks */,
-				21AEE974D97973EDC155F5FD00A8640B /* Headers */,
+				6D32F3E0EF69FC57325DE6A676E9AED4 /* Sources */,
+				82713FBA177EA6DFEBDA74774E40F2F9 /* Frameworks */,
+				DCD24FE580590DB7DD3D85E7DBA7AA46 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				A1CB8FE609BE98E4AFEC0D161814334F /* PBXTargetDependency */,
 			);
 			name = "Pods-dmCalendarExample";
 			productName = "Pods-dmCalendarExample";
-			productReference = 0DB3AA31E043ED38B25175C103ADB207 /* Pods_dmCalendarExample.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		EC7331C78A840EF25818A86FDD25BF7F /* dmCalendar */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C551E05EDDB6A5C91AD1D6A14977E47F /* Build configuration list for PBXNativeTarget "dmCalendar" */;
-			buildPhases = (
-				3DC82157A2D098E0C18E33C6148ACD16 /* Sources */,
-				CD5B31A02FA0F7ADAD93046E10C7E2BC /* Frameworks */,
-				555D3F763A3C5D6E520DA3AB6E75A669 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = dmCalendar;
-			productName = dmCalendar;
-			productReference = A3E3B4FB42B8ED1FD664CCCAAAE956A4 /* dmCalendar.framework */;
+			productReference = 9C66386986FC3D301D12D170D2989CBC /* Pods_dmCalendarExample.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -256,55 +148,30 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 981401A7F2D75C8FF86C47D2616CF08D /* Products */;
+			productRefGroup = 47B5FA11DDE330DFEC7DCB45DA867F26 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EC7331C78A840EF25818A86FDD25BF7F /* dmCalendar */,
-				80725E9319119FB54C7C860067231765 /* Pods-dmCalendarExample */,
+				91D2B3C0F3EA3C8D34AC386F081D8D1E /* Pods-dmCalendarExample */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		235D5A1FD30CB2C00AEE2B670953AC0E /* Sources */ = {
+		6D32F3E0EF69FC57325DE6A676E9AED4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6D583E5F459D363B56B47DB617899A64 /* Pods-dmCalendarExample-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		3DC82157A2D098E0C18E33C6148ACD16 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E50A2C0CB312EC6667E6A9FFEB3A0660 /* dmCalendar-dummy.m in Sources */,
-				3495209012636F2B334E76FE8276C013 /* dmCalendar.swift in Sources */,
-				E3DCBD1C8C642E212FADE6BC18310328 /* dmCalendarCollectionDataSource.swift in Sources */,
-				623DDCEFA3EAFA932C1E560E6DD83AAB /* dmCalendarCollectionDelegate.swift in Sources */,
-				A2D2D7AAE4D72A462C28F1AA4D26923E /* dmCalendarCollectionLayout.swift in Sources */,
-				65EC7F6D3013B4AB1DDF443A34D396DC /* dmCalendarCollectionView.swift in Sources */,
-				85A7B701C615195FF9BC73E37D4D6933 /* dmCalendarDate.swift in Sources */,
-				F6334DF05C9ACDCF8022ED24A7DA7D0D /* dmCalendarProperties.swift in Sources */,
+				A64FCAE8A6883B022855EA7F2FA61AC7 /* Pods-dmCalendarExample-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		A1CB8FE609BE98E4AFEC0D161814334F /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = dmCalendar;
-			target = EC7331C78A840EF25818A86FDD25BF7F /* dmCalendar */;
-			targetProxy = 3F4008AA2F3ACA159A87A70F9F161DB8 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		12A3D6A817F1E0A62AC2DD671B2621A8 /* Debug */ = {
+		290B0C8E7EE18D9299CF30054F836B12 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D79F981FF5889EC5470C3D0EE486732A /* dmCalendar.xcconfig */;
+			baseConfigurationReference = 0E4F84AF5A7E412A607CB2E3F6DC2957 /* Pods-dmCalendarExample.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -315,23 +182,57 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/dmCalendar/dmCalendar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/dmCalendar/Info.plist";
+				INFOPLIST_FILE = "Target Support Files/Pods-dmCalendarExample/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/dmCalendar/dmCalendar.modulemap";
-				PRODUCT_NAME = dmCalendar;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-dmCalendarExample/Pods-dmCalendarExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_dmCalendarExample;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		6E84CA6E4174FFF4EBC8F414E3A6D3F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DD0F75876654CC7402FEADAE923C91B5 /* Pods-dmCalendarExample.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-dmCalendarExample/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-dmCalendarExample/Pods-dmCalendarExample.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_dmCalendarExample;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		6F9224530522DD3C735EC96CF142642E /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -385,40 +286,6 @@
 				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
 				SYMROOT = "${SRCROOT}/../build";
-			};
-			name = Release;
-		};
-		B1BE1A3A9F9DCF7A81F0A1C29C69A446 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DD0F75876654CC7402FEADAE923C91B5 /* Pods-dmCalendarExample.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-dmCalendarExample/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-dmCalendarExample/Pods-dmCalendarExample.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_dmCalendarExample;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
 		};
@@ -482,72 +349,6 @@
 			};
 			name = Debug;
 		};
-		E828B2F315DFFB3302D3D96BD7392268 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D79F981FF5889EC5470C3D0EE486732A /* dmCalendar.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/dmCalendar/dmCalendar-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/dmCalendar/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/dmCalendar/dmCalendar.modulemap";
-				PRODUCT_NAME = dmCalendar;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		FA1BE745965F7EF4B86EF719160E88A8 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E4F84AF5A7E412A607CB2E3F6DC2957 /* Pods-dmCalendarExample.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-dmCalendarExample/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-dmCalendarExample/Pods-dmCalendarExample.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_dmCalendarExample;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -560,20 +361,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		9F58E30324CF79F338A26FEDA1BB0477 /* Build configuration list for PBXNativeTarget "Pods-dmCalendarExample" */ = {
+		E07254760FBF679A9A15BAC03AD20916 /* Build configuration list for PBXNativeTarget "Pods-dmCalendarExample" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				FA1BE745965F7EF4B86EF719160E88A8 /* Debug */,
-				B1BE1A3A9F9DCF7A81F0A1C29C69A446 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C551E05EDDB6A5C91AD1D6A14977E47F /* Build configuration list for PBXNativeTarget "dmCalendar" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				12A3D6A817F1E0A62AC2DD671B2621A8 /* Debug */,
-				E828B2F315DFFB3302D3D96BD7392268 /* Release */,
+				290B0C8E7EE18D9299CF30054F836B12 /* Debug */,
+				6E84CA6E4174FFF4EBC8F414E3A6D3F3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
