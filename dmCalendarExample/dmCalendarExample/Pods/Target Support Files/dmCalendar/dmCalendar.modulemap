@@ -1,0 +1,6 @@
+framework module dmCalendar {
+  umbrella header "dmCalendar-umbrella.h"
+
+  export *
+  module * { export * }
+}

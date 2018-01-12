@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import dmCalendar
 
 class ExampleCell: UICollectionViewCell {
 	fileprivate let dayLabel: UILabel = {

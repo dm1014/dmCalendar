@@ -6,6 +6,6 @@ target 'dmCalendarExample' do
   use_frameworks!
 
   # Pods for dmCalendarExample
-  # pod 'dmCalendar'
+  pod 'dmCalendar', '~> 0.1.2'
 
 end
