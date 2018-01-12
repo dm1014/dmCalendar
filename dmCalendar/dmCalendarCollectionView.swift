@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-public public protocol dmCalendarCollectionViewDelegate: class {
+public protocol dmCalendarCollectionViewDelegate: class {
 	func calendarCollectionViewWillLayoutSubview(_ collection: dmCalendarCollectionView)
 }
 
