@@ -563,11 +563,6 @@ extension dmCalendar: UICollectionViewDelegate {
 		return value
 	}
 	
-	public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
-		guard let layout = calendarCollection.collectionViewLayout as? dmCalendarCollectionLayout, let size = delegate?.calendar?(self, layout: layout, referenceSizeForHeaderInSection: section) else { return .zero }
-		return size
-	}
-	
 	public func indexPathForPreferredFocusedView(in collectionView: UICollectionView) -> IndexPath? {
 		return delegate?.indexPathForPreferredFocusedView?(in: self)
 	}

@@ -27,6 +27,5 @@ import UIKit
 	@objc optional func calendar(_ calendar: dmCalendar, didUpdateFocusIn context: UICollectionViewFocusUpdateContext, with coordinator: UIFocusAnimationCoordinator)
 	@objc optional func calendar(_ calendar: dmCalendar, canFocusItemAt indexPath: IndexPath) -> Bool
 	@objc optional func calendar(_ calendar: dmCalendar, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool
-	@objc optional func calendar(_ calendar: dmCalendar, layout calendarLayout: dmCalendarCollectionLayout, referenceSizeForHeaderInSection section: Int) -> CGSize
 	@objc optional func indexPathForPreferredFocusedView(in calendar: dmCalendar) -> IndexPath?
 }
