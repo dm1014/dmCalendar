@@ -14,14 +14,16 @@ public enum dmCalendarItemSizeHeight {
 	case custom(CGFloat)
 }
 
-public class dmCalendarProperties {
-	var itemSizeHeight: dmCalendarItemSizeHeight = .equalToWidth
-	var headerReferenceSizeHeight: CGFloat = 0.0
-	var footerReferenceSizeHeight: CGFloat = 0.0
-	var scrollDirection: UICollectionViewScrollDirection = .vertical
-	var minimumLineSpacing: CGFloat = 0.0
-	var minimumInteritemSpacing: CGFloat = 0.0
-	var isPagingEnabled: Bool = false
-	var allowSelection: Bool = true
-	var allowMultipleSelection: Bool = false
+public final class dmCalendarProperties {
+	public var itemSizeHeight: dmCalendarItemSizeHeight = .equalToWidth
+	public var headerReferenceSizeHeight: CGFloat = 0.0
+	public var footerReferenceSizeHeight: CGFloat = 0.0
+	public var scrollDirection: UICollectionViewScrollDirection = .vertical
+	public var minimumLineSpacing: CGFloat = 0.0
+	public var minimumInteritemSpacing: CGFloat = 0.0
+	public var isPagingEnabled: Bool = false
+	public var allowSelection: Bool = true
+	public var allowMultipleSelection: Bool = false
+	
+	public init() { }
 }

@@ -10,9 +10,9 @@ import Foundation
 import UIKit
 
 public struct dmCalendarDate {
-	let day: Int
-	let month: Int
-	let year: Int
+	public let day: Int
+	public let month: Int
+	public let year: Int
 }
 
 // MARK: - dmCalendarDate Components
