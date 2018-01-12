@@ -456,31 +456,31 @@ extension dmCalendar {
 
 // MARK: - Registering Cells/Views
 extension dmCalendar {
-	func register(_ cellClass: AnyClass?, forCellWithReuseIdentifier identifier: String) {
+	public func register(_ cellClass: AnyClass?, forCellWithReuseIdentifier identifier: String) {
 		calendarCollection.register(cellClass, forCellWithReuseIdentifier: identifier)
 	}
 	
-	func register(_ viewClass: AnyClass?, forSupplementaryViewOfKind kind: String, withReuseIdentifier identifier: String) {
+	public func register(_ viewClass: AnyClass?, forSupplementaryViewOfKind kind: String, withReuseIdentifier identifier: String) {
 		calendarCollection.register(viewClass, forSupplementaryViewOfKind: kind, withReuseIdentifier: identifier)
 	}
 	
-	@nonobjc func register(_ nib: UINib?, forCellWithReuseIdentifier identifier: String) {
+	@nonobjc public func register(_ nib: UINib?, forCellWithReuseIdentifier identifier: String) {
 		calendarCollection.register(nib, forCellWithReuseIdentifier: identifier)
 	}
 	
-	@nonobjc func register(_ nib: UINib?, forSupplementaryViewOfKind kind: String, withReuseIdentifier identifier: String) {
+	@nonobjc public func register(_ nib: UINib?, forSupplementaryViewOfKind kind: String, withReuseIdentifier identifier: String) {
 		calendarCollection.register(nib, forSupplementaryViewOfKind: kind, withReuseIdentifier: identifier)
 	}
 	
-	@nonobjc func dequeueReusableCell(withReuseIdentifier identifier: String, for indexPath: IndexPath) -> UICollectionViewCell {
+	@nonobjc public func dequeueReusableCell(withReuseIdentifier identifier: String, for indexPath: IndexPath) -> UICollectionViewCell {
 		return calendarCollection.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath)
 	}
 	
-	@nonobjc func dequeueReusableSupplementaryView(ofKind elementKind: String, withReuseIdentifier identifier: String, for indexPath: IndexPath) -> UICollectionReusableView {
+	@nonobjc public func dequeueReusableSupplementaryView(ofKind elementKind: String, withReuseIdentifier identifier: String, for indexPath: IndexPath) -> UICollectionReusableView {
 		return calendarCollection.dequeueReusableSupplementaryView(ofKind: elementKind, withReuseIdentifier: identifier, for: indexPath)
 	}
 	
-	@nonobjc func cellForItem(at indexPath: IndexPath) -> UICollectionViewCell? {
+	@nonobjc public func cellForItem(at indexPath: IndexPath) -> UICollectionViewCell? {
 		return calendarCollection.cellForItem(at: indexPath)
 	}
 }
